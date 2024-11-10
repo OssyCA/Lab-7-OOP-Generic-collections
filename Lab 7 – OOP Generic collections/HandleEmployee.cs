@@ -16,14 +16,14 @@ namespace Lab_7___OOP_Generic_collections
         public HandleEmployee()
         {
             // Initializing Employees with some predefined Employee objects
-            Employees =
-            [
-                new Employee(1, "Alice", "Kvinna", 50000),
-                new Employee(2, "Bob", "Man", 55000),
-                new Employee(3, "Charlie", "Icke-binär", 52000),
-                new Employee(4, "Diana", "Kvinna", 48000),
-                new Employee(5, "Ethan", "Man", 60000),
-            ];
+            Employees = new List<Employee>
+            {
+                new Employee(1, "Alice", "Female", 50000),
+                new Employee(2, "Bob", "Male", 55000),
+                new Employee(3, "Charlie", "Non-binary", 52000),
+                new Employee(4, "Diana", "Female", 48000),
+                new Employee(5, "Ethan", "Male", 60000)
+            };
             EmployeesStack = new Stack<Employee>(); // Initializing the stack
         }
 
@@ -51,7 +51,7 @@ namespace Lab_7___OOP_Generic_collections
         // Method to pop all employees from stack and then push them back
         public void HandleStack()
         {
-            List<Employee> poppedEmployees = []; // List to hold popped employees
+            List<Employee> poppedEmployees = new List<Employee>(); // List to hold popped employees
 
             // Pop each employee from the stack and add to poppedEmployees list
             while (EmployeesStack.Count > 0)
@@ -90,7 +90,7 @@ namespace Lab_7___OOP_Generic_collections
         public void CheckEmployeeInList()
         {
             Console.WriteLine("------------------------------------");
-            var employee2 = new Employee(3, "Charlie", "Icke-binär", 52000);
+            var employee2 = new Employee(3, "Charlie", "Non-binary", 52000);
 
             // Check if employee2 exists in Employees list
             if (Employees.Contains(employee2))
@@ -104,16 +104,16 @@ namespace Lab_7___OOP_Generic_collections
 
             Console.WriteLine("---------------------------------------------------");
 
-            // Find the first employee with gender "Man"
-            var firstMan = Employees.Find(m => m.Gender == "Man");
-            Console.WriteLine(firstMan);
+            // Find the first employee with gender "Male"
+            var firstMale = Employees.Find(m => m.Gender == "Male");
+            Console.WriteLine(firstMale);
 
-            // Find all employees with gender "Man"
-            var allMale = Employees.FindAll(m => m.Gender == "Man");
+            // Find all employees with gender "Male"
+            var allMales = Employees.FindAll(m => m.Gender == "Male");
             Console.WriteLine("---------------------------------------------------\nAll males:");
 
             // Display each male employee
-            foreach (Employee emp in allMale)
+            foreach (Employee emp in allMales)
             {
                 Console.WriteLine(emp);
             }
