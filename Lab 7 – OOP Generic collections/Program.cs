@@ -9,7 +9,7 @@
             handleEmployee.DisplayEmployeeList();
             Console.WriteLine("-------------------------------");
 
-            handleEmployee.DisplayStack();
+            handleEmployee.PushAndDisplayStack();
 
             handleEmployee.PeekStack();
 

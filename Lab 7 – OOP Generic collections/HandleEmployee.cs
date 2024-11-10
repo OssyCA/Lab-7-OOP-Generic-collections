@@ -37,7 +37,7 @@ namespace Lab_7___OOP_Generic_collections
         }
 
         // Method to push employees onto the stack and display stack details
-        public void DisplayStack()
+        public void PushAndDisplayStack()
         {
             foreach (Employee e in Employees)
             {
